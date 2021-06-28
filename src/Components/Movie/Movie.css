@@ -1,0 +1,39 @@
+.movie-item{
+ width: 200px;
+ height: 300px;
+ font-size: 1rem;
+ color: white;
+ /* border: 1px solid white; */
+ background-color: #212529;
+ transition: transform 0.5s;
+ border-radius: 5px;
+ box-shadow: 0 4px 8px 0 rgba(199, 19, 19, 0.856), 0 6px 20px 0 rgba(196, 13, 13, 0.719);
+}
+
+.movie-item:hover{
+    transform: scale(1.1);
+}
+
+.movie-title{
+
+}
+.movie-info{
+    height: 10%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+}
+
+.movie-rating{
+
+}
+
+.movie-poster{
+    height: 90%;
+    width: 100%;
+}
+.movie-poster img {
+    height: 100%;
+    width: 100%;
+}
