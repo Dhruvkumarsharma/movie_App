@@ -16,12 +16,23 @@ class Crousel extends Component {
         let videoobj = data.map( (obj)=>{
             return obj.id;
         } )
-        // console.log(videoobj);
-        let movieObj = await Promise.all(videoobj.map( async (id)=>{
+        console.log(videoobj);
+        let movieOb = await Promise.all(videoobj.map( async (id)=>{
             // https://api.themoviedb.org/3/movie/646207/videos?api_key=865b483d55b619279149858c6786abcf&language=en-US
-            let obj =  await axios.get(`${API_URL}/movie/${id}/videos?api_key=${API_KEY}&language=en-US`);
-            return obj;
+            try{
+                    let obj =  await axios.get(`${API_URL}/movie/${id}/videos?api_key=${API_KEY}&language=en-US`);
+                    return obj;
+
+                }catch(err){
+                    return null;
+                }
         } ));
+        let movieObj = movieOb.filter((movie) =>{
+            if(movie != null){
+                return true;
+            }
+            return false;
+        })
         // console.log(movieObj);
         let ytobj = movieObj.map( (mobj)=>{
             console.log("inside ytobj");

@@ -153,7 +153,9 @@ class App extends Component {
                 <React.Fragment>
                   <br></br>
                   <div>
-                    {this.state.flag ? <></>:(<Crousel></Crousel>)}
+                    {this.state.flag ? <></>:
+                    (<Crousel></Crousel>)
+                    }
                   
 
                   </div>
